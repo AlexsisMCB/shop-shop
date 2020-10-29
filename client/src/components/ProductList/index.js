@@ -9,7 +9,7 @@ import { QUERY_PRODUCTS } from "../../utils/queries";
 import spinner from "../../assets/spinner.gif";
 
 
-function ProductList({ currentCategory }) {
+function ProductList() {
   const [state, dispatch] = useStoreContext();
 
   const { currentCategory } = state;
@@ -36,7 +36,7 @@ function ProductList({ currentCategory }) {
   return (
     <div className="my-2">
       <h2>Our Products:</h2>
-      {products.length ? (
+      {state.products.length ? (
         <div className="flex-row">
             {filterProducts().map(product => (
                 <ProductItem
